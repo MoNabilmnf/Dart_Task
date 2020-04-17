@@ -1,10 +1,10 @@
-import 'package:FirstTask/employerList.dart' as emp;
+import 'package:FirstTask/functions.dart';
+import 'package:FirstTask/taxes.dart';
+class RedEmpData extends employer{
 
-class RedEmpData extends emp.employer{
-  static const Tax1 = 0.07;
-  static const Tax2 = 0.08;
   var salary;
-  AddEmpData(){
+  // ignore: always_declare_return_types
+  EmployeeData(){
     empList.add(employee1);
     empList.add(employee2);
     empList.add(employee3);
@@ -15,17 +15,16 @@ class RedEmpData extends emp.employer{
     empList.add(employee8);
     empList.add(employee9);
     empList.add(employee10);
-  }
-  Tax(){
-    for(int x=0 ; x < empList.length ; x++){
-      if(empList[x].salary > 3500){
-        salary = empList[x].salary - (empList[x].salary * Tax2);
-      }else{
-        salary =  empList[x].salary - (empList[x].salary * Tax1);
-      }
-      print("Employer name is ${empList[x].name} and salary is $salary , age is ${empList[x].age} , job is ${empList[x].jop}");
+    for(int x=0 ; x < empList.length ; x++) {
+      print(
+          "Employee name is ${empList[x].name}"
+              "  salary is ${Tax(empList[x].salary)},"
+              " age is ${empList[x].age}"
+              " , job is ${empList[x].jop}"
+      );
     }
   }
+
 
 
 }
